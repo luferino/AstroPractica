@@ -9,3 +9,4 @@ buy:
     usa: enlase usan 
 ---
 una **descripcion** enorme es lo que debe de haber aqui
+no se observa por alguna razon
