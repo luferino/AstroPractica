@@ -1,7 +1,7 @@
 ---
 title: Learning TypeScript
 author: Josh Goldberg
-img: learning-typescript.jpg
+img: 2.jpg
 readtime: 301
 description: Domina TypeScript de 0 a experto
 buy:

@@ -1,7 +1,7 @@
 ---
 title: Aprenddiendo a usar Astro
 author: yo
-img: apende.jpg
+img: 1.jpg
 readtime: 224
 description: pruebas con astro 
 buy:
