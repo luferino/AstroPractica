@@ -1,9 +1,31 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+    
+    return [
+        {
+            params: {
+                id: "aprendiendo-git"
+            }
+        },
+        {
+            params: {
+                id: "learning-typescript"
+            }
+        },
+        {
+            params: {
+                id: "3"
+            }
+        }
+    ];
+}) satisfies GetStaticPaths;
 ---
 
 <Layout>
     <h1>hola</h1>
-    <h1>se sigue comprobando</h1>
+    <h1>quedo libre por hoy</h1>
 </Layout>
