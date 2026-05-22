@@ -9,23 +9,19 @@ export const getStaticPaths = (() => {
         {
             params: {
                 id: "aprendiendo-git"
-            }
-        },
-        {
-            params: {
-                id: "learning-typescript"
-            }
-        },
-        {
-            params: {
-                id: "3"
+            },
+            props: {
+                title: "Aprendiendo Git",
+                description: "Un libro para aprender Git desde cero",
             }
         }
     ];
 }) satisfies GetStaticPaths;
+
+const { title, description } = Astro.props;
 ---
 
-<Layout>
-    <h1>hola</h1>
-    <h1>quedo libre por hoy</h1>
+<Layout title={title}>
+    <h1>{title}</h1>
+    <p>{description}</p>
 </Layout>
