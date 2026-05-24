@@ -3,25 +3,23 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
-export const getStaticPaths = (() => {
-    
-    return [
-        {
-            params: {
-                id: "aprendiendo-git"
-            },
-            props: {
-                title: "Aprendiendo Git",
-                description: "Un libro para aprender Git desde cero",
-            }
-        }
-    ];
+export const getStaticPaths = (async() => {
+    const books = await getCollection("books");
+    return books.map((book) => ({
+        params: {
+            id: book.id,
+        },
+        props: {
+            book,
+        },
+    }));
 }) satisfies GetStaticPaths;
 
-const { title, description } = Astro.props;
+const { book } = Astro.props;
+const { data } = book;
 ---
 
-<Layout title={title}>
-    <h1>{title}</h1>
-    <p>{description}</p>
+<Layout title={data.title}>
+    <h1>{data.title}</h1>
+    <p>{data.description}</p>
 </Layout>
