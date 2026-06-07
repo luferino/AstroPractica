@@ -3,9 +3,15 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import typography from '@tailwindcss/typography';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   }
-});
+  vite: {
+    plugins: [tailwindcss()]
+  }
+}
+);
