@@ -1,13 +1,23 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	title: string;	// Define any props you want to pass to the layout here
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<link href="/src/styles/global.css" rel="stylesheet" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<ClientRouter /> <!-- This enables client-side routing for the entire layout -->
 	</head>
 	<body>
 		<div>
@@ -17,7 +27,7 @@
 	</body>
 </html>
 
-<style>
+<style is:global>
 	@reference 'tailwindcss';
 	html{
 		font-family: sans-serif,system-ui;
@@ -25,7 +35,7 @@
 		color: #fff;
 	}
 	body {
-		@apply grid place-items-center p-20;
+		@apply grid min-h-screen place-content-center p-20;
 	}
 	body > div {
 		@apply container;
