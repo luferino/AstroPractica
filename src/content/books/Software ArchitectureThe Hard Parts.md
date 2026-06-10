@@ -1,7 +1,7 @@
 ---
 title: Software Architecture The Hard Parts
 author: yo
-img: 1.jpg
+img: 2.jpg
 readtime: 71
 description: Software Architecture The Hard Parts
 buy:

@@ -1,7 +1,7 @@
 ---
 title: Fundamentals of Software Architecture, 2nd Edition
 author: Josh Goldberg
-img: 2.jpg
+img: 4.jpg
 readtime: 301
 description: Fundamentals of Software Architecture, 2nd Edition
 buy:

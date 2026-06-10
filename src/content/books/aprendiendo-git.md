@@ -1,14 +1,14 @@
-
 ---
 title: Aprenddiendo a usar Astro
 author: yo
-img: 1.jpg
+img: 6.jpg
 readtime: 224
 description: pruebas con astro 
 buy:
     spain: https://www.amazon.com/-/es/Aprendiendo-Git-GitHub-pr%C3%A1cticas-estrategias/dp/B0D2LPMG6F
     usa: https://www.amazon.com/-/en/Aprendiendo-Git-GitHub-pr%C3%A1cticas-estrategias/dp/B0D2LPMG6F
 ---
+
 **Aprender a trabajar con Git y GitHub es una habilidad esencial para cualquier persona dedicada al desarrollo de software.**
 Lo mejor de todo es que puedes hacerlo en tan solo unas pocas horas.
 

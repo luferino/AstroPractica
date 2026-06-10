@@ -1,7 +1,7 @@
 ---
 title: Designing Data-Intensive Application
 author: yo
-img: 1.jpg
+img: 5.jpg
 readtime: 224
 description: Designing Data-Intensive Application
 buy:

@@ -28,11 +28,11 @@ const books = await getCollection('books');
 							<img 
 								transition:name={`img-${id}`}
 								class="mr-5 w-48 rounded" 
-								src={`${img}`} 
+								src={`/${img}`} 
 								alt={title} />
 							</a>
 							<div class="flex flex-col justify-center">
-							<h2 class="mb-2 text-2xl font-bold  leading-tight text-whtite">
+							<h2 transition:name={`title-${id}`} class="mb-2 text-2xl font-bold  leading-tight text-whtite">
 								{title}
 							</h2>
 							<p class="mb-4 text-gray-300 max-w-sm">
