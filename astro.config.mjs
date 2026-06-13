@@ -8,6 +8,11 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  env: { 
+    schema: {
+      SHOW_BUY_BUTTON: envFile.boolean({context:"server", access: 'PUBLIC'}),
+      SCORE_API_ENDPOINT:envFile.string()
+    }
 }
 );
