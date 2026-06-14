@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -11,8 +11,7 @@ export default defineConfig({
   },
   env: { 
     schema: {
-      SHOW_BUY_BUTTON: envFile.boolean({context:"server", access: 'PUBLIC'}),
-      SCORE_API_ENDPOINT:envFile.string()
+      SHOW_BUY_BUTTON: envField.boolean({context:"server", access: 'public'})
     }
 }
-);
+});
