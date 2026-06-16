@@ -42,11 +42,7 @@ const { Content } = await render(book);
                         title="Comprar libro"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-balance inline-flex gap-2 items-center
-bg-yellow-400
-text-black font-bold py-2 px-4
-rounded-lg border border-yellow-500 transition duration-200 ease-in-out
-hover: scale-105 justify-center text-center"
+                        class="text-balance inline-flex gap-2 items-center bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg border border-yellow-500 transition duration-200 ease-in-out hover: scale-105 justify-center text-center"
                     >
                         Comprar en amazon
                         <amazonLogo />
@@ -64,3 +60,7 @@ hover: scale-105 justify-center text-center"
         </main>
     </div>
 </Layout>
+
+<script>
+import { SCORE_API_ENDPOINT } from "astro:env/client";
+</script>
