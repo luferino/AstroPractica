@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { SHOW_BUY_BUTTON } from "astro:env/server";
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import amazonLogo from "../../components/amazonLogo.astro";
+import AmazonLogo from "../../components/AmazonLogo.astro";
  
 export const getStaticPaths = (async () => {
     const books = await getCollection("books");
@@ -35,6 +35,7 @@ const { Content } = await render(book);
                 src={`/${img}`}
                 alt={title}
             />
+            <span class="text-xs" id="score"></span>
             {
                 SHOW_BUY_BUTTON && (
                     <a
@@ -45,7 +46,7 @@ const { Content } = await render(book);
                         class="text-balance inline-flex gap-2 items-center bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg border border-yellow-500 transition duration-200 ease-in-out hover: scale-105 justify-center text-center"
                     >
                         Comprar en amazon
-                        <amazonLogo />
+                        <AmazonLogo />
                     </a>
                 )
             }
@@ -63,4 +64,12 @@ const { Content } = await render(book);
 
 <script>
 import { SCORE_API_ENDPOINT } from "astro:env/client";
-</script>
+const scoreElement = document.getElementById("score");
+
+fetch(SCORE_API_ENDPOINT)
+    .then((response) => response.text())
+    .then((scoreValue) => {
+        if (scoreElement) {
+            scoreElement.innerHTML = `⭐ Puntuación: ${scoreValue.trim()}/5 `;
+        }
+    });
