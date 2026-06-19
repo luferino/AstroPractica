@@ -5,6 +5,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import AmazonLogo from "../../components/AmazonLogo.astro";
 import BookScore from "../../components/BookScore.astro";
+import BuyButton from "../../components/BuyButton.astro";
  
 export const getStaticPaths = (async () => {
     const books = await getCollection("books");
@@ -29,6 +30,7 @@ export const prerender = true;
 ---
 
 <Layout title={`${title} - Dev Books`}>
+
     <div class="flex gap-12">
         <aside class="flex flex-col items-center gap-4">
             <a href="/" class="hover:underline opacity-70">⬅️volver atras</a>
@@ -38,22 +40,11 @@ export const prerender = true;
                 src={`/${img}`}
                 alt={title}
             />
-            <BookScore server:defer id={id} >
+            <BookScore server:defer id={id}>
                 <span slot="fallback" class="text-xs opacity-70">Cargando puntuacion... </span>
-            </BookScore />
+            </BookScore>
             {
-                SHOW_BUY_BUTTON && (
-                    <a
-                        href={buy.spain}
-                        title="Comprar libro"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-balance inline-flex gap-2 items-center bg-yellow-400 text-black font-bold py-2 px-4 rounded-lg border border-yellow-500 transition duration-200 ease-in-out hover: scale-105 justify-center text-center"
-                    >
-                        Comprar en amazon
-                        <AmazonLogo />
-                    </a>
-                )
+                SHOW_BUY_BUTTON && <BuyButton server:defer buy={buy} />
             }
         </aside>
         <main class="max-w-3xl">
